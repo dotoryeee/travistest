@@ -7,7 +7,7 @@ services:
 
 before_install:
   - echo "building image with dockerfile"
-  - docker build -t dotoryeee/test2 dockerfile.dev
+  - docker build -t dotoryeee/test2 -f dockerfile.dev ./
 
 script:
   - docker run -e CI=true dotoryeee/test2 npm run test -- --coverage
